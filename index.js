@@ -1,3 +1,3 @@
 import {} from './digitus.js'
 
-console.log(null);
+console.log('c');
