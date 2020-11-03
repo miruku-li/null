@@ -1,6 +1,8 @@
-import c from '/core/component.js';
+import Component from '/core/component.js';
 
-export default class NullDummy extends c {
+// see also https://github.com/WebReflection/hyperHTML-Element for details
+
+export default class NullDummy extends Component {
 
   get defaultState() {
     return {clicks: 0, text: 'bla'};
