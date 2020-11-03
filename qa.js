@@ -12,7 +12,7 @@ export default class NullQA extends Component {
     return this.html`
     <strong>Q:</strong> ${this.props?.question}
     <hr>
-    <strong>A:</strong>${this.state.answer.length}
+    <strong>A:</strong>${this.state.answer?.length}
     <textarea oninput=${this} style="height: 3em;width: 100%">${this.state.answer}</textarea>
     `;
   }
