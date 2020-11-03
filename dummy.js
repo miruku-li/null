@@ -1,8 +1,6 @@
 import c from '/core/component.js';
 
-const {log} = console;
-
-class NullDummy extends c {
+export default class NullDummy extends c {
 
   get defaultState() {
     return {clicks: 0, text: 'bla'};
@@ -10,7 +8,8 @@ class NullDummy extends c {
 
   created() { this.render() }
 
-  render() { return this.html`
+  render() {
+    return this.html`
     Hello <button onclick=${this}>click</button> ( ${this.state.clicks} )
     <input oninput=${this} value="${this.state.text}">`;
   }
@@ -19,7 +18,7 @@ class NullDummy extends c {
     this.patch({clicks: v=>v+1});
   }
   oninput({target}) {
-    this.patch({text: target.value});
+    this.patch({text: target.value}, {detail: 'textfiled input'});
   }
 
 

@@ -1,6 +1,18 @@
 <html>
 <head>
-  <script type='module' src='./index.js'></script>
+  <script type='module' src='./dummy.js'></script>
 <head>
 <body>
-</html>
+  test NullDummy hallo
+  <br>
+  <m-null-dummy id='helo'></m-null-dummy>
+  <br>
+  <script type="module">
+    import nd from './dummy.js'
+    let d = new nd({id: 'bar'})
+    d.patch({text: "adsf"})
+    document.body.append(d)
+    //d.addEventListener('change', ()=>console.log('x'))
+    d.onchange = (e) => console.log(e.detail, e.target.state)
+  </script>
+</body></html>
