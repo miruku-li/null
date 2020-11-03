@@ -10,7 +10,7 @@
   <script type="module">
     import nd from './dummy.js'
     let d = new nd({id: 'bar'})
-    d.patch({text: "adsf"})
+    d.change({text: "adsf"})
     document.body.append(d)
     //d.addEventListener('change', ()=>console.log('x'))
     d.onchange = (e) => console.log(e.detail, e.target.state)

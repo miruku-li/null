@@ -17,10 +17,10 @@ export default class NullDummy extends Component {
   }
 
   onclick() {
-    this.patch({clicks: v=>v+1});
+    this.change({clicks: v=>v+1});
   }
   oninput({target}) {
-    this.patch({text: target.value}, {detail: 'textfiled input'});
+    this.change({text: target.value}, {detail: 'textfiled input'});
   }
 
 
