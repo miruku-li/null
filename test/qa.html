@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body><script type="module">
+      import Comp from '../qa.js'
+      let c = new Comp({
+        question: "Was ist die Antwort auf die Frage „nach dem Leben, dem Universum und dem ganzen Rest“?"
+      });
+      document.body.append(c)
+      c.onchange = (e) => console.log(e.detail)
+      c.change({answer: 'hello2'}, {who: "demo", what: 'user state from pod'})
+
+  </script>
+  </body>
+</html>

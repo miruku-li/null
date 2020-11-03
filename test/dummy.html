@@ -1,14 +1,10 @@
 <html>
 <head>
-  <script type='module' src='./dummy.js'></script>
 <head>
 <body>
-  test NullDummy hallo
-  <br>
-  <!--<m-null-dummy id='helo'></m-null-dummy>-->
-  <br>
+
   <script type="module">
-    import nd from './dummy.js'
+    import nd from '../dummy.js'
     const {log} = console
     let d = new nd()
     document.body.append(d)
