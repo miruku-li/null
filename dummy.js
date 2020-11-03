@@ -5,7 +5,7 @@ import Component from '/core/component.js';
 export default class NullDummy extends Component {
 
   get defaultState() {
-    return {clicks: 0, text: 'bla'};
+    return {clicks: 0, text: '123'};
   }
 
   created() { this.render() }
@@ -17,10 +17,10 @@ export default class NullDummy extends Component {
   }
 
   onclick() {
-    this.change({clicks: v=>v+1});
+    this.change({clicks: v=>v+1}, {subject:'user', verb:'click'});
   }
   oninput({target}) {
-    this.change({text: target.value}, {detail: 'textfiled input'});
+    this.change({text: target.value}, {subject:'user', verb:'input'});
   }
 
 

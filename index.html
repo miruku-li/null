@@ -5,14 +5,16 @@
 <body>
   test NullDummy hallo
   <br>
-  <m-null-dummy id='helo'></m-null-dummy>
+  <!--<m-null-dummy id='helo'></m-null-dummy>-->
   <br>
   <script type="module">
     import nd from './dummy.js'
-    let d = new nd({id: 'bar'})
-    d.change({text: "adsf"})
+    const {log} = console
+    let d = new nd()
     document.body.append(d)
-    //d.addEventListener('change', ()=>console.log('x'))
-    d.onchange = (e) => console.log(e.detail, e.target.state)
+    d.state = {text: "setter"}
+    d.setState({text: "setState"})
+    d.change({text: v=>v+v})
+    d.onchange = (e) => log(e.detail)
   </script>
 </body></html>
