@@ -34,7 +34,7 @@ export default class Mithril extends HTMLElement {
     }),
     `(${this.value?.note?.length ?? 0})`,
     m('button', {
-      onclick: () => this.value = {}
+      onclick: () => this.patch(()=>{})
     }, 'reset')
   ]))}
 }
