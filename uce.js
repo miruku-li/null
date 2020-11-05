@@ -1,38 +1,41 @@
 import {define} from '//unpkg.com/uce?module';
-
-// see https://github.com/WebReflection/uce for docu
+import merge from '//unpkg.com/mergerino?module'
 
 const name = 'miruku-null-uce'
 
 define(name, {
 
-  // observedAttributes: ['start'],
-
-  init() { this.count = 0 },
-
-  connected() { this.render() },
-  inc() {
-    this.count++
-    this.render()
-    this.changed()
+  get state () {
+    return this._state$ || { count: 0, note: 'vorgabe'}
   },
 
-  reset() {
-    this.count = 0
+  set state (value) {
+    Object.defineProperty(this, '_state$', {
+        configurable: true,
+        value: merge(this.state, value)
+    })
     this.render()
-    this.changed()
+    this.changed({ timestamp: Date.now()})
   },
-
-  bound: ['inc', 'reset'],
 
   changed(detail) {
-    this.dispatchEvent(new CustomEvent('change', {detail}))
+    this.dispatchEvent(new CustomEvent('change', { detail }))
   },
 
   render() {
-    this.html`${this.count}
-    <button onclick=${this.inc}>+</button>
-    <button onclick=${this.reset}>reset</button>`;
+    console.log('render>',this.state)
+    this.html`${this.state?.count}
+    <button
+      onclick=${ () => this.state = {count: x=> (x||0)+1} }
+    >+</button>
+    <input
+      placeholder='notes...'
+      value=${this.state.note}
+      oninput=${ ({target}) => this.state = {note: target.value} }
+    /> (${this.state?.note?.length ?? 0})
+    <button
+      onclick=${ () => this.state = () => {} }
+    >reset</button>`;
   },
 
 });

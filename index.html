@@ -7,8 +7,13 @@
   <script type="module">
 import {} from './uce.js'
 
-document.querySelector('miruku-null-uce').onchange = console.log
-  </script>
+document
+  .querySelector('miruku-null-uce')
+  .onchange = ({target}) => {
+  //  console.log(target.state)
+  }
+
+</script>
 
 </head>
 

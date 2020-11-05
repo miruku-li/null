@@ -1,7 +1,7 @@
 # Component API
 
 ##### naming scheme
-  * **name** `miruku`-`pacakge`-`name`
+  * **tag** `miruku`-`pacakge`-`name`
   * **src** `https://miruku.li/package/name.js`
 
 *Example* [Demo](https://flems.io/#0=N4IgZglgNgpgziAXAbVAOwIYFsZJAOgAsAXLKEAGhAGMB7NYmBvEAXwvW10QICsEqdBk2J4IWAA60ATsQAEwVnLDTaWOQHISxCXEQB6fVgjSArgGtT+KBH1pTUKPtPUY+fhoA6ab0LjyYKHkAXjkAE1pqUxwGfGppGAxGAFFYGOIACg1jM0sAWntHPJcYDQBKbwio9PwAI1owgE98DAkJJjCAYUJoMIzA4gq0OBhiAElhaQA3DCgMjLK5YIA+OQH8CDRqBYo5AEYABiOyyhAR2GpiCHoEHgAWRABmO7YOEEwcPDi4ARp6RmYPDYAF1WEA) @ flems.io
