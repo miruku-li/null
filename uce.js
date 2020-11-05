@@ -6,39 +6,35 @@ const name = 'miruku-null-uce'
 
 define(name, {
 
-  observedAttributes: ['start'],
+  // observedAttributes: ['start'],
 
-  init() {
-    this.count = this.props.start || 0
-    this.text = 'sdf'
-    this.render()
-  },
+  init() { this.count = 0 },
 
+  connected() { this.render() },
   inc() {
     this.count++
     this.render()
-    this.dispatch('change')
+    this.changed()
   },
 
   reset() {
-    this.count = this.props.start
-    this.dispatch('change')
+    this.count = 0
+    this.render()
+    this.changed()
   },
 
   bound: ['inc', 'reset'],
 
-  dispatch(type, detail) {
-    this.dispatchEvent(new CustomEvent(type, {detail}))
+  changed(detail) {
+    this.dispatchEvent(new CustomEvent('change', {detail}))
   },
 
   render() {
-    this.html`
-    <button onclick=${this.inc}>${this.count} click</button>
-    <button onclick=${this.reset}>reset to ${this.props.start}</button>`;
+    this.html`${this.count}
+    <button onclick=${this.inc}>+</button>
+    <button onclick=${this.reset}>reset</button>`;
   },
 
-
-
-}); // const {test, other} = privates.get(this);
+});
 
 export default customElements.get(name)
