@@ -27,7 +27,8 @@ const elt = new Cmp()
 document.body.appendChild(elt)
 elt.oninput = ({target})=>console.log(target.value)
 ```
-
+  * **observablehq.com**
+  As each component should provide a `value`-getter/setter an notify observers with `input` events it is consumable in Observabel notebooks. See https://observablehq.com/@tsc/miruku-li-null-dummy-js for an example.
 
 ##### attributes
 Only for string boolean, not standardised
