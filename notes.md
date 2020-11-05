@@ -4,20 +4,19 @@
   * **tag** `miruku`-`pacakge`-`name`
   * **src** `https://miruku.li/package/name.js`
 
-*Example* [Demo](https://flems.io/#0=N4IgZglgNgpgziAXAbVAOwIYFsZJAOgAsAXLKEAGhAGMB7NYmBvEAXwvW10QICsEqdBk2J4IWAA60ATsQAEwVnLDTaWOQHISxCXEQB6fVgjSArgGtT+KBH1pTUKPtPUY+fhoA6ab0LjyYKHkAXjkAE1pqUxwGfGppGAxGAFFYGOIACg1jM0sAWntHPJcYDQBKbwio9PwAI1owgE98DAkJJjCAYUJoMIzA4gq0OBhiAElhaQA3DCgMjLK5YIA+OQH8CDRqBYo5AEYABiOyyhAR2GpiCHoEHgAWRABmO7YOEEwcPDi4ARp6RmYPDYAF1WEA) @ flems.io
+*Example* [Demo](https://flems.io/#0=N4IgZglgNgpgziAXAbVAOwIYFsZJAOgAsAXLKEAGhAGMB7NYmBvEAXwvW10QICsEqdBk2J4IWAA60ATsQAEwVnLDTaWOQHISxCXEQB6fVgjSArgGtT+KBH1pTUKPtPUY+fhoA6ab0LjyYKHkAXjkAE1pqUxwGfGppGAxGAFFYGOIACg1jM0sAWntHPJcYDQBKbwio9PwAI1owgE98DAkJJjCAYUJoMIzA4jLKEDhAmGpiCHoEHgBmRFmABjYOEEwcPDi4ARp6RmYeNgBdViA) @ flems.io
 ```js
 import {} from 'https://miruku.li/null/uce.js'
 
 const elt = document.createElement('miruku-null-uce')
 document.body.appendChild(elt)
-setInterval(() => elt.inc(), 1000)
 ```
-*Alternative* [Demo](N4IgZglgNgpgziAXAbVAOwIYFsZJAOgAsAXLKEAGhAGMB7NYmBvEAXwvW10QICsEqdBk2J4IWAA60ATsQAEAVQDCAUTlhptLHIDkJYhLiIA9MawRpAVwDWl) @ flems.io
+*Alternative* [Demo](https://flems.io/#0=N4IgZglgNgpgziAXAbVAOwIYFsZJAOgAsAXLKEAGhAGMB7NYmBvEAXwvW10QICsEqdBk2J4IWAA60ATsQAEAVQDCAUTlhptLHIDkJYhLiIA9MawRpAVwDWl-FAjG0lqFGOXqMfPx0AdNEJw8jBQ8gC8cmgwAO6KqgAUAJT+ACa01JY4DPgARrQpAJ74GBISTClKhNAp8SHEiZQgcCEw1MQQ9Ag8AEyIAMwADGwcIJg4ePjUcAI09IzMPGwAuqxAA) @ flems.io
 
 ```js
 import UCE from 'https://miruku.li/null/uce.js'
 const elt = new UCE()
-// ...
+document.body.appendChild(elt)
 ```
 
 
