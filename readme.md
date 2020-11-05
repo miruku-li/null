@@ -1,22 +1,31 @@
 # Component API
 
 ##### naming scheme
-  * **tag** `miruku`-`pacakge`-`name`
-  * **src** `https://miruku.li/package/name.js`
+  * **tag** `miruku`-`package`-`name`
+  * **dist** `https://miruku.li/package/name.js`
+  * **github** as part of `https://github.com/miruku-li/null`
 
-*Example* [Demo](https://flems.io/#0=N4IgZglgNgpgziAXAbVAOwIYFsZJAOgAsAXLKEAGhAGMB7NYmBvEAXwvW10QICsEqdBk2J4IWAA60ATsQAEwVnLDTaWOQHISxCXEQB6fVgjSArgGtT+KBH1pTUKPtPUY+fhoA6ab0LjyYKHkAXjkAE1pqUxwGfGppGAxGAFFYGOIACg1jM0sAWntHPJcYDQBKbwio9PwAI1owgE98DAkJJjCAYUJoMIzA4jLKEDhAmGpiCHoEHgBmRFmABjYOEEwcPDi4ARp6RmYeNgBdViA) @ flems.io
+*Examples*
+  * Plain HTML [[Demo](https://flems.io/#0=N4IgzgpgNhDGAuEAmIBcIB0ALeBbKIANCLAPYB2YpMaJ1UAhgA6QrEBmAljGGgNqhyDXBFrY8BYmXKIZtADxhYAJ05N4AAngBPJhAC8AclykkAVxiGNYZbCM54LVAHpnuTsrMBrMxiidncgsoZ3NcXG0MACswQwA+eWclVXU4gB1yeXdPHwBaIKgoXLCIhLcPbzN84OKzcO04onBoOHhOCl50AEZUAGYAThAAXwBdIaA)]
+```html
+<script type='module' src='https://miruku.li/null/dummy.js'></script>
+<miruku-null-dummy></miruku-null-dummy>
+```
+  * use `createElement` [[Demo](https://flems.io/#0=N4Igxg9gdgzhA2BTEAucD4EMAONEBMQAaEAMwEskZUBtUKTAW2TQDoALAF0fmPSk6IBqECAC+RekxYhWAK2olIAoZxHlG2CACdOAAmBi9pbREZ6A5F064UAejuNy2gK4BrF63jk7UF-Hg7fBdGRgBPeRgLAB0oWOUYfUR4fQBePXwIMBDVVjBtRExBAFEkZgEACgsnVw8AWj8AuuDQsIsASljM7PLOVgAjCHwInGwhfABhdkp8CuTOdr5ITUpEbRF+zH7kvjwkME5yaGo0AGYUU4AGOsuUS-FJEAZmETyYRX5BYTRxAF0xIA)]
 ```js
-import {} from 'https://miruku.li/null/uce.js'
+import {} from 'https://miruku.li/null/dummy.js'
 
-const elt = document.createElement('miruku-null-uce')
+const elt = document.createElement('miruku-null-dummy') 
 document.body.appendChild(elt)
 ```
-*Alternative* [Demo](https://flems.io/#0=N4IgZglgNgpgziAXAbVAOwIYFsZJAOgAsAXLKEAGhAGMB7NYmBvEAXwvW10QICsEqdBk2J4IWAA60ATsQAEAVQDCAUTlhptLHIDkJYhLiIA9MawRpAVwDWl-FAjG0lqFGOXqMfPx0AdNEJw8jBQ8gC8cmgwAO6KqgAUAJT+ACa01JY4DPgARrQpAJ74GBISTClKhNAp8SHEiZQgcCEw1MQQ9Ag8AEyIAMwADGwcIJg4ePjUcAI09IzMPGwAuqxAA) @ flems.io
+  * Instantiate from Class [[demo](https://flems.io/#0=N4Igxg9gdgzhA2BTEAucD4EMAONEBMQAaEAMwEskZUBtUKTAW2TQDoALAF0fmPSk6IBqECAC+RekxYhWAK2olIAoZxHlG2CACdOAAgDCmvaW0RGegORdOuFAHp7jctoCuAa1et45e1Ffw8Pb4royMAJ7yMJYAOlBxyjD6iPD6ALx6UIgA7oaaABQAlHH4EGChqqwARhD4kTjYQvgG7JT4+SmcxVmprNDkUNiu6Xr5wJyY2gDmiJxihWkAfIkIiN4QU-kT07OsAG6Y8K6IhXyQmpSI2iJVmFUpfHhIYJzk0NRoAAwonwC0ACwoACsAEZxJIQAxmCJWGAYIp+IJhGhxABdMRAA)]
 
 ```js
-import UCE from 'https://miruku.li/null/uce.js'
-const elt = new UCE()
+import Cmp from 'https://miruku.li/null/dummy.js'
+
+const elt = new Cmp()
 document.body.appendChild(elt)
+elt.oninput = ({target})=>console.log(target.value)
 ```
 
 
@@ -24,19 +33,15 @@ document.body.appendChild(elt)
 Only for string boolean, not standardised
 
 ##### setter/getter
-  * `set state(value) { ... }`
-  * `get state() {}`
-  * `set config(value) { ... }`
-  * `get config() {}`
+  * `set value(value) { ... }`
+  * `get value() {}`
 
 ##### methods
-  * `focus()`
-  * `reload()`
   * `render()`
 
 ##### events
-  * `change` @HTMLElement
-  Note: Setting the state from outside will trigger the `render`-method as expected, but it won't trigger a change event. This is the standard behavior of HTML input elements.
+  * `input`
+   Note: Setting `value` from outside will trigger the `render`-method as expected, but it won't trigger a change event. This is the standard behavior of HTML input elements. *cf. ...*
 ```js
 const foo = document.createElement('textarea')
 document.body.appendChild(foo)
@@ -48,7 +53,7 @@ foo.value = 'bar, bier' // no console output!
 fixme
   * deconstruction
 
-# Notes
+### Notes
 
   * https://base64.guru/developers/data-uri/gzip
   * https://itty.bitty.site/edit
