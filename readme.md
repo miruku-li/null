@@ -1,4 +1,4 @@
-# Component API
+# Components for CS ...
 
 ##### naming scheme
   * **tag** `miruku`-`package`-`name`
