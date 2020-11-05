@@ -5,16 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>uce counter component</title>
   <script type="module">
-import {} from '../mithril.js'
-
-const elt = document.querySelector('miruku-null-mithril')
-elt.onchange = ({target}) => { console.log('l', target.value) }
-
-</script>
-
+    import {} from './dummy.js'
+    dummy.oninput = ({target}) => { console.log(target.value) }
+  </script>
 </head>
-
 <body>
-<miruku-null-mithril id='bar'></miruku-null-mithril>
+<miruku-null-dummy id='dummy'></miruku-null-dummy>
 </body>
 </html>
