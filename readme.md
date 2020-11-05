@@ -35,9 +35,15 @@ Only for string boolean, not standardised
   * `render()`
 
 ##### events
-  * `onchange[ed]`
-  * `onload[ed]`
-  *
+  * `change` @HTMLElement
+  Note: Setting the state from outside will trigger the `render`-method as expected, but it won't trigger a change event. This is the standard behavior of HTML input elements.
+```js
+const foo = document.createElement('textarea')
+document.body.appendChild(foo)
+foo.oninput = ({target}) => console.log(target.value)
+foo.value = 'bar, bier' // no console output!
+```
+
 
 fixme
   * deconstruction
