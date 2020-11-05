@@ -6,10 +6,11 @@
   <title>uce counter component</title>
   <script type="module">
     import {} from './dummy.js'
-    dummy.oninput = ({target}) => { console.log(target.value) }
+    let elt = document.createElement('miruku-null-dummy');
+    document.body.appendChild(elt)
+    //dummy.oninput = ({target}) => { console.log(target.value) }
   </script>
 </head>
 <body>
-<miruku-null-dummy id='dummy'></miruku-null-dummy>
 </body>
 </html>

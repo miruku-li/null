@@ -7,12 +7,15 @@ customElements.define(name, class extends HTMLElement {
 
   constructor() {
     super();
-    this.render();
     Object.defineProperty(this, 'patch', {
       value: (payload, detail) => {
         const old = this.value
         this.value = merge(this.value, payload)
         this.dispatchEvent(new CustomEvent('input', {detail, old, new: this.value }))}})
+  }
+
+  connectedCallback() {
+    this.render();
   }
 
   get value () {
