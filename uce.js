@@ -6,7 +6,7 @@ const name = 'miruku-null-uce'
 define(name, {
 
   get state () {
-    return this._state$ || { count: 0, note: 'vorgabe'}
+    return this._state$ || { }
   },
 
   set state (value) {
@@ -23,19 +23,23 @@ define(name, {
   },
 
   render() {
-    console.log('render>',this.state)
-    this.html`${this.state?.count}
+    this.html`${this.state?.count||0}
     <button
       onclick=${ () => this.state = {count: x=> (x||0)+1} }
     >+</button>
     <input
       placeholder='notes...'
-      value=${this.state.note}
+      value='${this.state.note||''}'
       oninput=${ ({target}) => this.state = {note: target.value} }
     /> (${this.state?.note?.length ?? 0})
-    <button
-      onclick=${ () => this.state = () => {} }
+    <button name='reset'
+      onclick=${ () => {
+        this.state = () => {}
+
+      }}
     >reset</button>`;
+    const ipt = this.querySelector('input')
+    if (ipt.value!=this.state?.note) { ipt.value = this.state.note||''}
   },
 
 });
