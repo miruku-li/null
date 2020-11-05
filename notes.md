@@ -1,22 +1,35 @@
-<miruku-package-component></miruku-package-component>
+# Component API
 
-attributes (only string values or boolean)
-  * id
-  * enables
-  * ...
+##### naming scheme
+  * **name** `miruku`-`pacakge`-`name`
+  * **src** `https://miruku.li/package/name.js`
 
-setter/getter
-  * set state(value) { ... }
-  * get state() {}
+*Example*
+```js
+import {} from 'https://miruku.li/package/name.js'
 
-methods
-  * focus()
-  * reload()
-  * render()
+const elt = document.createElement('miruku-pacakge-name')
+document.body.appendChild(elt)
+```
 
-events
-  * onchange[ed]
-  * onload[ed]
+##### attributes
+Only for string boolean, not standardised
+
+##### setter/getter
+  * `set state(value) { ... }`
+  * `get state() {}`
+  * `set config(value) { ... }`
+  * `get config() {}`
+
+##### methods
+  * `focus()`
+  * `reload()`
+  * `render()`
+
+##### events
+  * `onchange[ed]`
+  * `onload[ed]`
+  *
 
 fixme
   * deconstruction
