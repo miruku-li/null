@@ -15,7 +15,7 @@
 ```js
 import {} from 'https://miruku.li/null/dummy.js'
 
-const elt = document.createElement('miruku-null-dummy') 
+const elt = document.createElement('miruku-null-dummy')
 document.body.appendChild(elt)
 ```
   * Instantiate from Class [[demo](https://flems.io/#0=N4Igxg9gdgzhA2BTEAucD4EMAONEBMQAaEAMwEskZUBtUKTAW2TQDoALAF0fmPSk6IBqECAC+RekxYhWAK2olIAoZxHlG2CACdOAAgDCmvaW0RGegORdOuFAHp7jctoCuAa1et45e1Ffw8Pb4royMAJ7yMJYAOlBxyjD6iPD6ALx6UIgA7oaaABQAlHH4EGChqqwARhD4kTjYQvgG7JT4+SmcxVmprNDkUNiu6Xr5wJyY2gDmiJxihWkAfIkIiN4QU-kT07OsAG6Y8K6IhXyQmpSI2iJVmFUpfHhIYJzk0NRoAAwonwC0ACwoACsAEZxJIQAxmCJWGAYIp+IJhGhxABdMRAA)]
@@ -51,7 +51,7 @@ foo.value = 'bar, bier' // no console output!
 ```
 
 
-fixme
+FIXME
   * deconstruction
 
 ### Notes
