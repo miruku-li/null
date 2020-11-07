@@ -6,12 +6,13 @@ class MyElement extends LitElement {
     input: {type: String}
   }}
 
+
   render() { return html`
     <h1>Hello, ${this.input}!</h1>
-    <input @input=${this.handleInput} value=${this.input||''} />
+    <input @input=${this._input} value=${this.input||''} />
   `}
 
-  handleInput (e) {
+  _input (e) {
       this.input = e.target.value
       this.dispatchEvent(new CustomEvent('change'))
   }
@@ -20,7 +21,7 @@ class MyElement extends LitElement {
     return {input: this.input}
   }
   set value(value) {
-    Object.assign(this, value)
+    Object.assign(this, Object(value))
   }
 }
 
