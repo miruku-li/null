@@ -11,7 +11,7 @@ customElements.define(name, class extends HTMLElement {
       value: (payload, detail) => {
         const old = this.value
         this.value = merge(this.value, payload)
-        this.dispatchEvent(new CustomEvent('input', {detail, old, new: this.value }))}})
+        this.dispatchEvent(new CustomEvent('change', {detail, old, new: this.value }))}})
   }
 
   connectedCallback() {
