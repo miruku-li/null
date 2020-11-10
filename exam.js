@@ -8,7 +8,7 @@ let data = {
   tasks: [
     {
       title: 'Aufgabe 2',
-      module: '/null/qa.js?as=ex-qa',
+      module: '/null/qa.js?as=ex-qa&lang=en',
       query:  {
         question: "Was ist die Antwort auf die Frage „nach dem Leben, dem Universum und dem ganzen Rest“?"
       }

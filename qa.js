@@ -1,33 +1,41 @@
 import {LitElement, html, css} from '/vndr/lit-element/lit-element.js'
+import merge from '/vndr/mergerino.js'
 import {dispatch, queryParam} from '/core/utils.js';
 
 const {log} = console
 const {stringify} = JSON
 
-const name = queryParam(import.meta.url, 'as', "miruku-null-qa")
+export const name = queryParam(import.meta.url, 'as', "miruku-null-qa")
 
-class Element extends LitElement {
+const text = {
+    de: { q: 'Frage', a: 'Antwort',  placeholder: "Deine Antwort ..."},
+    en: { q: 'Question', a: 'Answer', placeholder: "Your answer ..." }
+}[queryParam(import.meta.url, 'lang', "de")]
+
+export default class Element extends LitElement {
 
   static get styles() { return css`
     .fc { display: flex; flex-direction: column; }
   `}
 
   static get properties() { return {
-    query: {type: Object},
-    value: {type: Object}
+    query: {type: Object},  // will never be touched from the inside
+    value: {type: Object}   // internal update will dispach 'change' event
   }}
 
   render() { return html`
     <table><tr>
-      <th>Q</th>
+      <th>${text.q}</th>
       <td>${this.query.question}</td>
     </tr><tr>
-      <th>A</th>
+      <th>${text.a}</th>
       <td class=fc>
         <textarea
-          placeholder="Deine Antwort ..."
+          placeholder=${text.placeholder}
           @input=${({target}) => {
-            this.value = {answer: target.value}
+            this.value = merge(this.value, {
+              answer: target.value,adsf
+            })
             dispatch(this, 'change', 'input@answer')
           }}
         >${this.value?.answer}</textarea></div>
@@ -35,9 +43,6 @@ class Element extends LitElement {
     </tr></table>
   `}
 
-
 }
 
 customElements.define(name, Element)
-export default Element;
-export {name}
