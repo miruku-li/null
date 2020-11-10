@@ -1,5 +1,7 @@
-import {} from '//unpkg.com/mithril'
-import merge from '//unpkg.com/mergerino?module';;
+import m from '/vndr/mithril.mod.js'
+import merge from '/vndr/mergerino.js';
+
+// try
 
 const name = "miruku-null-dummy";
 
@@ -8,10 +10,10 @@ customElements.define(name, class extends HTMLElement {
   constructor() {
     super();
     Object.defineProperty(this, 'patch', {
-      value: (payload, detail) => {
-        const old = this.value
+      value: (payload) => {
         this.value = merge(this.value, payload)
-        this.dispatchEvent(new CustomEvent('change', {detail, old, new: this.value }))}})
+        this.dispatchEvent(new CustomEvent('change'))
+    }})
   }
 
   connectedCallback() {
@@ -30,16 +32,21 @@ customElements.define(name, class extends HTMLElement {
   render() { m.render(this, m('div', [
     this.value?.count || 0,
     m('button', {
-      onclick: (e) => (e.stopPropagation(), this.patch({ count: x => (x||0)+1 }))
+      onclick: (e) => ( e.stopPropagation(),
+        this.patch({ count: x => (x||0)+1 }, 'dummy-inc'))
     }, '+'),
     m('input', {
       placeholder: 'notes...',
       value: this.value.note,
-      oninput: (e) => (e.stopPropagation(), this.patch({note: e.target.value}))
+      oninput: (e) => (
+        e.stopPropagation(),
+        this.patch({note: e.target.value}))
     }),
     `(${this.value?.note?.length ?? 0})`,
     m('button', {
-      onclick: (e) => (e.stopPropagation(), this.patch(()=>{}))
+      onclick: (e) => (
+        e.stopPropagation(),
+        this.patch(()=>{}))
     }, 'reset')
   ]))}
 
